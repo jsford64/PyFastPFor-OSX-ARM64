@@ -1,6 +1,3 @@
-#[![PyPI version](https://img.shields.io/pypi/v/pyfastpfor.svg)](https://pypi.python.org/pypi/pyfastpfor/)
-#[![Downloads](https://pepy.tech/badge/pyfastpfor)](https://pepy.tech/project/pyfastpfor)
-#[![Build Status](https://travis-ci.org/searchivarius/PyFastPFor.svg?branch=master)](https://travis-ci.org/searchivarius/PyFastPFor)
 # PyFastPFor-OSX-ARM
 
 With modifications to allow compiling on MacOS/OSX and Arm64.
