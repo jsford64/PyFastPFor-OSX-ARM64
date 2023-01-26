@@ -4,13 +4,12 @@ from setuptools.command.build_ext import build_ext
 import sys
 import setuptools
 
-if sys.platform == 'darwin':
-    # Temporarily modify the compiler environment var for this script on MacOS.
-    # SetupTools does not allow different flags for C and C++, and clang
-    # does not accept all flags at the same time like other compilers apparently do.
-    # This 'compiler' intercepts the command line, edits the options and calls the
-    # compiler with the right options enabled.
-    os.environ["CC"] = './cc-osx-arm.py'
+# Temporarily modify the compiler environment var for this script.
+# SetupTools does not allow different flags for C and C++, and clang
+# does not accept all flags at the same time like other compilers apparently do.
+# This 'compiler' intercepts the command line, edits the options and calls the
+# compiler with the right options enabled no matter what platform, Mac, linux, etc.
+os.environ["CC"] = './cc-osx-arm.py'
 
 
 __version__ = '1.3.6'

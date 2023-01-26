@@ -52,21 +52,19 @@ if __name__ == '__main__':
         check_sse2neon_install()
         cmdline += ['-I./sse2neon/sse2neon.h']
 
-    if sys.platform == 'darwin':
-        # Running MacOS
 
-        # Find the name of the source file to be compiled following the '-c' option
-        sourceFile = cmdline[cmdline.index('-c')+1]
-        # Check the source type to see if it is a C file
-        if sourceFile.endswith('.c'):
-            # C file, remove C++ compiler options from command line
-            cmdline.remove('-stdlib=libc++')
-            cmdline.remove('-std=c++11')
-        else:
-            try:
-                cmdline.remove('-std=c99')
-            except:
-                pass
+    # Find the name of the source file to be compiled following the '-c' option
+    sourceFile = cmdline[cmdline.index('-c')+1]
+    # Check the source type to see if it is a C file
+    if sourceFile.endswith('.c'):
+        # C file, remove C++ compiler options from command line
+        cmdline.remove('-stdlib=libc++')
+        cmdline.remove('-std=c++11')
+    else:
+        try:
+            cmdline.remove('-std=c99')
+        except:
+            pass
 
     # Execute the compiler command
     out = subprocess.run(cmdline, capture_output=True)
