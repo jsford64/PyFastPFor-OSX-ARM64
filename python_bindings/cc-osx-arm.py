@@ -51,7 +51,7 @@ if __name__ == '__main__':
         # Yes, make sure sse2neon/sse2neon.h is installed and add it to the command line
         check_sse2neon_install()
         incNeon = '-I'+os.path.abspath('./sse2neon/sse2neon.h')
-        cmdline += [incNeon]
+        cmdline += ['-I./sse2neon']
 
 
     # Find the name of the source file to be compiled following the '-c' option
