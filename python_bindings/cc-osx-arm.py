@@ -50,7 +50,6 @@ if __name__ == '__main__':
     if is_arm64_arch():
         # Yes, make sure sse2neon/sse2neon.h is installed and add it to the command line
         check_sse2neon_install()
-        incNeon = '-I'+os.path.abspath('./sse2neon/sse2neon.h')
         cmdline += ['-I./sse2neon']
 
 
@@ -67,7 +66,8 @@ if __name__ == '__main__':
         except:
             pass
 
-    print(' '.join(cmdline),'\n')
+    print(' '.join(cmdline),'\n', flush=True)
+
     # Execute the compiler command
     out = subprocess.run(cmdline, capture_output=True)
 
