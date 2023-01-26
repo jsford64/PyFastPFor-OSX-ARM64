@@ -66,6 +66,7 @@ if __name__ == '__main__':
         except:
             pass
 
+    print(' '.join(cmdline))
     # Execute the compiler command
     out = subprocess.run(cmdline, capture_output=True)
 
