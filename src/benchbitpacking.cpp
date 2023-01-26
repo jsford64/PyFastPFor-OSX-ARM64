@@ -17,10 +17,7 @@
 #include "ztimer.h"
 #include "horizontalbitpacking.h"
 
-#if defined(__ARM_NEON__)
-     #include <arm_neon.h>
-     #include "sse2neon.h"
-#endif
+
 using namespace std;
 using namespace FastPForLib;
 

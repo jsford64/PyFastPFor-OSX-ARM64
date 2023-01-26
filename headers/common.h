@@ -12,7 +12,7 @@
 #include <fcntl.h>
 #if defined(__i386__) || defined(__x86_64__)
 #include <immintrin.h>
-#elif defined(__ARM_NEON__)
+#elif defined(__aarch64__)
 #include <arm_neon.h>
 #include "sse2neon.h"
 #endif
