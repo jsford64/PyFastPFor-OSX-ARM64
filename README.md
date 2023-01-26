@@ -2,6 +2,8 @@
 
 With modifications to allow compiling on MacOS/OSX and Arm64.
 
+Compiles on Intel Linux, Intel MacOS, M1 MacOS, and NVidia Jetson.
+
 Python bindings for the fast **light-weight** integer compression library [FastPFor](https://github.com/lemire/FastPFor): A research library with integer compression schemes. FastPFor is broadly applicable to the compression of arrays of 32-bit integers where most integers are small. The library seeks to exploit SIMD instructions (SSE) whenever possible. This library can decode at least 4 billions of compressed integers per second on most desktop or laptop processors. That is, it can decompress data at a rate of 15 GB/s. This is significantly faster than generic codecs like gzip, LZO, Snappy or LZ4.
 
 # Authors
