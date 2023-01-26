@@ -23,9 +23,9 @@ def check_sse2neon_install ():
     if not os.path.isfile('./sse2neon/sse2neon.h'):
         out = subprocess.run([ 'git', 'clone', 'https://github.com/DLTcollab/sse2neon.git'], capture_output=True)
         if out.returncode == 0:
-            print('git clone successful!')
+            print('git clone https://github.com/DLTcollab/sse2neon.git successful!')
         else:
-            print('git clone unsuccessful!')
+            print('git clone https://github.com/DLTcollab/sse2neon.git unsuccessful!')
             exit(1)
 
 def is_arm64_arch ():
@@ -50,7 +50,8 @@ if __name__ == '__main__':
     if is_arm64_arch():
         # Yes, make sure sse2neon/sse2neon.h is installed and add it to the command line
         check_sse2neon_install()
-        cmdline += ['-I./sse2neon/sse2neon.h']
+        incNeon = '-I'+os.path.abspath('./sse2neon/sse2neon.h')
+        cmdline += [incNeon]
 
 
     # Find the name of the source file to be compiled following the '-c' option
@@ -66,7 +67,7 @@ if __name__ == '__main__':
         except:
             pass
 
-    print(' '.join(cmdline))
+    print(' '.join(cmdline),'\n')
     # Execute the compiler command
     out = subprocess.run(cmdline, capture_output=True)
 
