@@ -75,6 +75,18 @@ static __inline__ unsigned long long stopRDTSCP(void) { return rdtsc(); }
 inline uint64 rdtsc() { return 0; }
 static __inline__ ticks startRDTSC(void) { return 0; }
 static __inline__ ticks stopRDTSCP(void) { return 0; }
+
+#elif defined(__aarch64__)
+
+inline unsigned long long rdtsc() {
+  unsigned long long time;
+  asm volatile("mrs %0, cntvct_el0" : "=r" (time));
+  return time;
+}
+static __inline__ unsigned long long startRDTSC(void) { return rdtsc(); }
+
+static __inline__ unsigned long long stopRDTSCP(void) { return rdtsc(); }
+
 #else
 #error Unknown architecture
 #endif

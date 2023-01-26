@@ -162,7 +162,7 @@ template <class iter> void printme(iter i, iter b) {
 }
 
 __attribute__((const)) inline uint32_t asmbits(const uint32_t v) {
-#ifdef _MSC_VER
+#if defined(_MSC_VER) || defined(__aarch64__)
   return gccbits(v);
 #else
   if (v == 0)

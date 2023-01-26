@@ -68,8 +68,8 @@ if __name__ == '__main__':
 
     # echo stdout and stderr
     if len(out.stdout):
-        print(out.stdout.deccode('utf-8'))
+        print(out.stdout.decode('utf-8'))
     if len(out.stderr):
-        print(out.stderr.deccode('utf-8'), file=sys.stderr)
+        print(out.stderr.decode('utf-8'), file=sys.stderr)
 
     exit(out.returncode)

@@ -10,7 +10,13 @@
 // C headers (sorted)
 #include <errno.h>
 #include <fcntl.h>
+#if defined(__i386__) || defined(__x86_64__)
 #include <immintrin.h>
+#elif defined(__ARM_NEON__)
+#include <arm_neon.h>
+#include "sse2neon.h"
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -17,6 +17,7 @@
 #elif defined(__GNUC__) && defined(__ARM_NEON__)
      /* GCC-compatible compiler, targeting ARM with NEON */
      #include <arm_neon.h>
+     #include "sse2neon.h"
 #elif defined(__GNUC__) && defined(__IWMMXT__)
      /* GCC-compatible compiler, targeting ARM with WMMX */
      #include <mmintrin.h>

@@ -29,7 +29,9 @@
 #include "pfor.h"
 #include "simdpfor.h"
 #include "pfor2008.h"
+#ifndef __aarch64__
 #include "VarIntG8IU.h"
+#endif
 #include "simdbinarypacking.h"
 #include "snappydelta.h"
 #include "varintgb.h"
