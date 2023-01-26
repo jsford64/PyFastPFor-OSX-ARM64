@@ -16,11 +16,8 @@
 #include "synthetic.h"
 #include "ztimer.h"
 #include "horizontalbitpacking.h"
-<<<<<<< HEAD
+
 #if defined(__ARM_NEON__)
-=======
-if defined(__ARM_NEON__)
->>>>>>> b4f9134b25c2e175d3caf47a7d41a0d4c7c66a8c
      #include <arm_neon.h>
      #include "sse2neon.h"
 #endif
