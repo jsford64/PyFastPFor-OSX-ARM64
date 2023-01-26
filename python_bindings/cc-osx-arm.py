@@ -62,6 +62,11 @@ if __name__ == '__main__':
             # C file, remove C++ compiler options from command line
             cmdline.remove('-stdlib=libc++')
             cmdline.remove('-std=c++11')
+        else:
+            try:
+                cmdline.remove('-std=c99')
+            except:
+                pass
 
     # Execute the compiler command
     out = subprocess.run(cmdline, capture_output=True)

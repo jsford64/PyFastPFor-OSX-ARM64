@@ -21,12 +21,6 @@
 #ifndef HORIZONTALBITPACKING_H_
 #define HORIZONTALBITPACKING_H_
 
-#ifndef __SSE4_1__
-
-#ifndef _MSC_VER
-#pragma message "No SSSE4.1 support? try adding -msse4.1"
-#endif
-#endif
 #include "common.h"
 
 namespace FastPForLib {
