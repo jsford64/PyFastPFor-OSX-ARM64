@@ -58,8 +58,14 @@ if __name__ == '__main__':
     # Check the source type to see if it is a C file
     if sourceFile.endswith('.c'):
         # C file, remove C++ compiler options from command line
-        cmdline.remove('-stdlib=libc++')
-        cmdline.remove('-std=c++11')
+        try:
+            cmdline.remove('-stdlib=libc++')
+        except:
+            pass
+        try:
+            cmdline.remove('-std=c++11')
+        except:
+            pass
     else:
         try:
             cmdline.remove('-std=c99')
